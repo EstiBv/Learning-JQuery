@@ -11,16 +11,16 @@ $(document).ready(function () {
 
   // Aplicando estilos y encandenando propiedades
   let paragrapahChangeColor = $("#jq-yellow")
-    .css("background", "yellow")
+    .css("background", "#d6ce56")
     .css("color", "orange");
 
-  paragrapahGreen.css("padding", "30px").css("background", "green");
+  paragrapahGreen.css("padding", "3px").css("background", "#6dac43");
   console.log(paragrapahGreen);
 
   // Selector de clase
   let paragrahImportant = $(".js-importantP")
-    .css("color", "red")
-    .css("border", "5px dashed black");
+    .css("color", "black")
+    .css("border", "2px dashed #ac4355");
   console.log(paragrahImportant.eq(0));
 
   // Selectores de etiqueta : clase definida en file.css
@@ -43,4 +43,17 @@ $(document).ready(function () {
     }
     console.log(that);
   });
+
+  // Selectores de atributo
+  $('[title = "Google"]').addClass("linkGl");
+  $('[title = "Facebook"]').addClass("linkFb");
+
+  // Otros
+  $("p,a").addClass("maginSup");
+
+  // Búsqueda de elementos por clase
+  let search = $("#box .highlighted");
+
+  search.eq(0).parent().parent().parent(); // prevObjects: posicionamiento (saltos) sobre los elementos del DOM (li < ul < div < etc) >> ../../ == parent()
+  console.log(search);
 });
