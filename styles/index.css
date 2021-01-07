@@ -1,0 +1,10 @@
+.secundary {
+  border: 5px solid purple;
+}
+.increaseFont {
+  font-size: 45px;
+  cursor: pointer;
+}
+.numbersSelect {
+  opacity: 0.3;
+}
