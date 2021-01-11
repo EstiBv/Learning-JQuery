@@ -9,3 +9,17 @@
   cursor: pointer;
   transition: 300ms all;
 }
+
+.inputForName {
+  padding: 10px;
+  width: 230px;
+  font-size: 21px;
+}
+.data {
+  border: 2px dashed black;
+  padding: 10px;
+  width: 230px;
+  height: 250px;
+  margin-top: 10px;
+  display: none;
+}

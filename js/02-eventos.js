@@ -29,4 +29,19 @@ $(document).ready(function () {
   box.dblclick(function () {
     $(this).css("background", "pink").css("color", "yellow");
   });
+
+  // Focus y blur
+  const inputForm = $("#name");
+
+  inputForm.focus(function () {
+    $(this).css("border", "2px solid green");
+  });
+
+  // metodo show() /= none & metodo val() = .value
+  inputForm.blur(function () {
+    $(this).css("border", "2px solid transparent");
+
+    // en el metodo text introduzco el metodo val para que refleje en divData el valor de inputForm
+    $("#divData").text($(this).val()).show();
+  });
 });
