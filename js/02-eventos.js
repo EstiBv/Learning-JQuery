@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  console.log("hola");
-  // Eventos = MouseOver and MouseOut >> pseudoclass :hover
+  //MOUSEOVER and MOUSEOUT >> pseudoclass :hover
   const box = $("#box");
 
   /* box.mouseover(function () {
@@ -21,7 +20,7 @@ $(document).ready(function () {
   }
   box.hover(changeRed, changeGreen);
 
-  // Evento = Click, doble click
+  // CLICK & DOUBLE CLICK
   box.click(function () {
     $(this).css("background", "blue").css("color", "white");
   });
@@ -30,8 +29,9 @@ $(document).ready(function () {
     $(this).css("background", "pink").css("color", "yellow");
   });
 
-  // Focus y blur
+  // FOCUS & BLUL
   const inputForm = $("#name");
+  const inputData = $("#divData");
 
   inputForm.focus(function () {
     $(this).css("border", "2px solid green");
@@ -42,6 +42,24 @@ $(document).ready(function () {
     $(this).css("border", "2px solid transparent");
 
     // en el metodo text introduzco el metodo val para que refleje en divData el valor de inputForm
-    $("#divData").text($(this).val()).show();
+    inputData.text($(this).val()).show();
+  });
+
+  // MOUSEDOWN & MOUSEUP
+  inputData.mousedown(function () {
+    $(this).css("border-color", "gray");
+  });
+  inputData.mouseup(function () {
+    $(this).css("border-color", "black");
+  });
+
+  //MOUSEMOVE coordenadas movimiento ratón
+  let doc = $(document);
+  doc.mousemove(function (event) {
+    const cursor = $("body");
+    cursor.css("cursor", "none");
+
+    const followMouse = $("#followMe");
+    followMouse.css("left", +event.clientX).css("top", +event.clientY);
   });
 });
