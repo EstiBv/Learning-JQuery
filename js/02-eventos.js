@@ -1,11 +1,32 @@
 $(document).ready(function () {
   console.log("hola");
-  // MouseOver and MouseOut >> pseudoclass :hover
+  // Eventos = MouseOver and MouseOut >> pseudoclass :hover
   const box = $("#box");
-  box.mouseover(function () {
-    $(this).css("background", "red");
+
+  /* box.mouseover(function () {
+     $(this).css("background", "red");
   });
-  box.mouseout(function () {
+   box.mouseout(function () {
+     $(this).css("background", "green");
+   });
+*/
+
+  // como argumentos
+  function changeRed() {
+    $(this).css("background", "red");
+  }
+
+  function changeGreen() {
     $(this).css("background", "green");
+  }
+  box.hover(changeRed, changeGreen);
+
+  // Evento = Click, doble click
+  box.click(function () {
+    $(this).css("background", "blue").css("color", "white");
+  });
+
+  box.dblclick(function () {
+    $(this).css("background", "pink").css("color", "yellow");
   });
 });
