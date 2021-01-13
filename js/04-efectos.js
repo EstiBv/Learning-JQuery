@@ -23,6 +23,8 @@ $(document).ready(function () {
 
   fadeIn() = show() vs fadeOut() = hide() 
   fadeTo (speed, opacity) = transition : speed, opacity
+>>> aceptan segundo parámetro un callback <<<
+
 */
 
   const boxText2 = $(".boxSecond");
@@ -32,11 +34,31 @@ $(document).ready(function () {
   buttonOpen.click(function () {
     let button = $(this);
     button.text("Cerrar");
-    boxText2.slideToggle().fadeTo("normal", 0.5).text("Efectos con jQuery");
+    boxText2.slideToggle().fadeTo("slow", 0.5).text("Efectos con jQuery");
   });
 
   /*
   EFECTOS: 
 toggle("speed"); fadeToggle(); slideToggle(); slideUp(); slideDown();
 */
+
+  const buttonAnime = $(".anime");
+  buttonAnime.click(function () {
+    boxText.animate(
+      {
+        marginLeft: "100px",
+        fontSize: "22px",
+      },
+      "fast"
+    );
+    boxText2.animate(
+      {
+        marginLeft: "100px",
+        borderRadius: "20px",
+        marginTop: "0px",
+        fontSize: "12px",
+      },
+      "slow"
+    );
+  });
 });
