@@ -1,0 +1,6 @@
+.data {
+  border: 2px solid hsl(120, 75%, 10%);
+  width: 200px;
+  height: 200px;
+  overflow: scroll;
+}
