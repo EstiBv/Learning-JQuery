@@ -10,4 +10,8 @@ $(document).ready(function () {
   buttonPopUp.click(function () {
     itemPopUp.dialog();
   });
+
+  // Datepicker()
+  const itemCalendar = $(".calendar");
+  itemCalendar.datepicker();
 });
