@@ -37,4 +37,25 @@ $(document).ready(function () {
 
     return false;
   });
+
+  //$ajax({})
+  /*
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    contentType: "application/json",
+    url: $(this).attr("action"),
+    data: "userNew",
+    beforeSend: function () {
+      console.log("enviando usuario");
+    },
+    success: function (response) {
+      console.log(response);
+    },
+    error: function () {
+      console.log("Ha ocurrido un error");
+    },
+    timeout: 2000,
+  });
+  */
 });
