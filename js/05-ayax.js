@@ -2,11 +2,10 @@ $(document).ready(function () {
   //  Metodo Load() => peticion Ayax por Get e incrustar el resultado en elemento html
 
   const data = $(".js-data");
-  data.load("https://reqres.in/");
+  // data.load("https://reqres.in/");
 
   // Metodo Get() para peticion GET
   $.get("https://reqres.in/api/users", { page: 2 }, function (response) {
-    console.log(response);
     console.log(
       response.data.forEach((each, index) => {
         $(".js-dataUser").append(
@@ -16,5 +15,26 @@ $(document).ready(function () {
     );
   });
 
-  // Metodo Post() para peticion POST
+  // Metodo Post() para peticion POST >> añadir usuario al api
+
+  const formUsers = $(".form");
+
+  formUsers.submit(function (ev) {
+    ev.preventDefault();
+
+    // coge el valor desde el html
+    let userNew = {
+      name: $('input[name="name"]').val(),
+      last_name: $('input[name="last_name"]').val(),
+    };
+    console.log(userNew);
+    // la url la coge del propio formulario (url, atributo en html)
+    $.post($(this).attr("action"), userNew, function (response) {
+      console.log(response);
+    }).done(function () {
+      alert("Usuario registrado correctamente");
+    });
+
+    return false;
+  });
 });
