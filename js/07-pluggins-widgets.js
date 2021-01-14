@@ -14,4 +14,8 @@ $(document).ready(function () {
   // Datepicker()
   const itemCalendar = $(".calendar");
   itemCalendar.datepicker();
+
+  // Tabs
+  const itemTabs = $(".tabs");
+  itemTabs.tabs();
 });
